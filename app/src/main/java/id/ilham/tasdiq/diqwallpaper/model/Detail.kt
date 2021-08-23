@@ -6,7 +6,6 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Detail(
     val previewURL:String?,
-    val webformatURL:String?,
     val largeImageURL:String?,
     val imageWidth:String?,
     val imageHeight:String?,
@@ -15,7 +14,8 @@ data class Detail(
     val downloads:String?,
     val likes:String?,
     val user:String?,
-    val userImageURL:String?
+    val userImageURL:String?,
+    val tags:String?
 ):Parcelable{
     constructor():this("","","","","","","",
         "","","","")

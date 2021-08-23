@@ -28,7 +28,9 @@
             android:layout_below="@+id/item_image"
             android:layout_alignStart="@+id/item_image"
             android:layout_margin="3dp"
-            android:textSize="18sp"/>
+            android:textSize="12sp"
+            android:lines="1"
+            android:ellipsize="end"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +38,7 @@
             android:layout_below="@+id/item_image"
             android:layout_toStartOf="@+id/item_downloads"
             android:layout_margin="3dp"
-            android:textSize="18sp"/>
+            android:textSize="12sp"/>
 
         <TextView
             android:id="@+id/item_downloads"
@@ -46,7 +48,7 @@
             android:layout_below="@+id/item_image"
             android:layout_alignEnd="@+id/item_image"
             android:layout_margin="3dp"
-            android:textSize="18sp"/>
+            android:textSize="12sp"/>
 
     </RelativeLayout>
 

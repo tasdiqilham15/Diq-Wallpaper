@@ -15,19 +15,23 @@ class MainViewModel :ViewModel(){
     private val apiService= ApiSevice
     private val dataImage=MutableLiveData<ArrayList<Detail>>()
     fun setImage (query:String){
+        //untuk request api dengan query
         apiService.getImages(query).enqueue(object :Callback<ImageSearch>{
             override fun onResponse(call: Call<ImageSearch>, response: Response<ImageSearch>) {
+                //jika respon berhasil maka di masukkan ke dataImage
                 if (response.isSuccessful){
                     val imageResponse= response.body()?.hits
                     dataImage.postValue(imageResponse)
                 }
             }
+            //untuk menunjukkan error
             override fun onFailure(call: Call<ImageSearch>, t: Throwable) {
                 Log.e("ERROR-RESPONSE",t.message.toString())
             }
 
         })
     }
+    //untuk mengambil data dari dataImage
     fun getDataImage():LiveData<ArrayList<Detail>>{
         return dataImage
     }
